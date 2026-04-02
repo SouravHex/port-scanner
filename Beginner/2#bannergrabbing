@@ -1,0 +1,8 @@
+import socket
+target = input("enter ip address: ")
+port = int(input("enter port number: "))
+s = socket.socket()
+s.connect((target, port))
+banner = s.recv(1024)
+print("banner:", banner.decode())
+s.close()
